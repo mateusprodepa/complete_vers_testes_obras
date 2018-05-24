@@ -2,7 +2,7 @@ const isNotLoading = `far fa-question-circle`;
 const isNotOk = `far fa-times-circle red`;
 const isOk = `far fa-check-circle`;
 const isLoading = `far spinner`;
-const URL = "http://localhost/obras4/codigo_fonte/testes_ambiente/api/testes.php";
+const URL = "api/testes.php";
 
 const closeModal = document.querySelector("#close-modal");
 const popUpBtnYes = document.querySelector("#sim");

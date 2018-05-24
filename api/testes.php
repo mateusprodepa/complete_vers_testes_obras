@@ -19,7 +19,11 @@
     $str .= " dbname=" . $banco;
     $str .= " user=" . $usuario;
     $str .= " password=" . $senha;
-    $conexao = pg_connect($str);
+    try {
+      $conexao = pg_connect($str);
+    } catch(Exception $e) {
+      echo "<strong style='color: #cd0000;''><i>ERRO:</i></strong> <strong>Não foi possível conectar ao banco de dados</strong>. <br>";
+    }
 
     if($conexao) {
       echo 'Conexão com o banco de dados funcionando normalmente. <br>';
@@ -106,6 +110,7 @@
         echo "O módulo <strong>\"$key\"</strong> está habilitado. <br>";
       } else {
         echo "<strong style=\"color: #cd0000;\"><i>ERRO:</i></strong> O módulo <strong>\"$key\"</strong> não está habilitado. <br>";
+        // if($key == "pdo_pgsql" || "pgsql") { echo "<strong style='color: #cd0000;''><i>ERRO:</i></strong> <strong>Não foi possível conectar ao banco de dados</strong>. <br>"; }
       }
     }
   }
